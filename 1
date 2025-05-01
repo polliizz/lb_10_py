@@ -1,0 +1,29 @@
+def factorial_recursive(n):
+    if n < 0:
+    raise ValueError("Факторіал не визначений для від'ємних чисел")
+    if n == 0:
+    return 1
+    return n * factorial_recursive(n - 1)
+
+def fibonacci_recursive(n):
+    if n < 0:
+    raise ValueError("Число Фібоначчі не визначене для від'ємних чисел")
+    if n == 0:
+    return 0
+    if n == 1:
+    return 1
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+
+def sum_list_recursive(numbers):
+    if not numbers:
+    return 0
+    return numbers[0] + sum_list_recursive(numbers[1:])
+
+def is_palindrome_recursive(s):
+    import re
+    s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+    if len(s) <= 1:
+    return True
+    if s[0] != s[-1]:
+    return False
+    return is_palindrome_recursive(s[1:-1])
